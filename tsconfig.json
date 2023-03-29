@@ -3,6 +3,12 @@
     "./src",
     "./webpack.*.ts"
   ],
+  "exclude": [
+    "node_modules",
+    "./src/**/*.test.ts",
+    "./src/**/*.test.tsx",
+    "./dist"
+],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
 

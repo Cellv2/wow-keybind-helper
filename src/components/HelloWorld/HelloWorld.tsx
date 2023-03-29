@@ -1,8 +1,12 @@
 import React from "react";
 
-const HelloWorld = () => (
+export type HelloWorldProps = {
+    title: string;
+};
+
+const HelloWorld = ({title}: HelloWorldProps) => (
     <>
-        <h1>Hello World</h1>
+        <h1>{title}</h1>
 
         <hr />
 

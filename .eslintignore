@@ -1,1 +1,4 @@
 webpack.config.ts
+src/**/*.test.ts
+src/**/*.test.tsx
+node_modules
