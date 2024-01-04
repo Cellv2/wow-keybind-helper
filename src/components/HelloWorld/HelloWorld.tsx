@@ -4,7 +4,7 @@ export type HelloWorldProps = {
     title: string;
 };
 
-const HelloWorld = ({title}: HelloWorldProps) => (
+const HelloWorld = ({ title }: HelloWorldProps) => (
     <>
         <h1>{title}</h1>
 
