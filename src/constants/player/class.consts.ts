@@ -1,4 +1,4 @@
-export const classes = [
+export const playerClasses = [
     "Death Knight",
     "Druid",
     "Evoker",
@@ -11,4 +11,4 @@ export const classes = [
     "Warlock",
     "Warrior"
 ] as const;
-export type Class = (typeof classes)[number];
+export type PlayerClass = (typeof playerClasses)[number];
