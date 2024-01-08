@@ -1,5 +1,5 @@
-import { Class } from "src/constants/classes.consts";
-import { Expansion } from "src/constants/expansions.consts";
+import { PlayerClass as Class } from "src/constants/player/class.consts";
+import { Expansion } from "src/constants/game/expansion.consts";
 
 type PlayerClass = {
     allowedExpansions: Expansion[];

@@ -1,4 +1,5 @@
 import React from "react";
+import { TalentSelectorGrid } from "../talents/TalentSelectorGrid";
 
 export type HelloWorldProps = {
     title: string;
@@ -20,6 +21,8 @@ const HelloWorld = ({ title }: HelloWorldProps) => (
         <p>
             process.env.VERSION: <b>{process.env.VERSION}</b>
         </p>
+
+        <TalentSelectorGrid />
     </>
 );
 
