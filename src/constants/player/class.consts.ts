@@ -4,6 +4,7 @@ export const playerClasses = [
     "Evoker",
     "Hunter",
     "Mage",
+    "Monk",
     "Paladin",
     "Priest",
     "Rogue",

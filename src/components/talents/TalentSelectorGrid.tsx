@@ -1,5 +1,5 @@
 import React from "react";
-import { ClassAbilities, classAbilities } from "src/constants/player/abilities";
+import { ClassAbilities, classAbilities } from "src/constants/player/abilities.consts";
 
 // type TalentSelectorGridProps = {};
 
