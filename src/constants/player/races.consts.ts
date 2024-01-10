@@ -1,0 +1,26 @@
+const races = [
+    "Blood Elf",
+    "Dark Iron Dwarf",
+    "Dracthyr",
+    "Draenei",
+    "Dwarf",
+    "Gnome",
+    "Goblin",
+    "Highmountain Tauren",
+    "Human",
+    "Kul Tiran",
+    "Lightforged Draenei",
+    "Mag'har Orc",
+    "Mechagnome",
+    "Night Elf",
+    "Nightborne",
+    "Orc",
+    "Pandaren",
+    "Tauren",
+    "Troll",
+    "Void Elf",
+    "Vulpera",
+    "Worgen",
+    "Zandalari Troll"
+] as const;
+export type PlayerRace = (typeof races)[number];
