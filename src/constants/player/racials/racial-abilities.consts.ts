@@ -38,7 +38,7 @@ const activeRacialAbilities = [
 export type ActiveRacialAbility = (typeof activeRacialAbilities)[number];
 
 type ExpansionRacialAbilities = {
-    expansion: Expansion;
+    expansion: Expansion[];
     activeRacialAbilities: ActiveRacialAbility[];
 };
 
@@ -52,20 +52,24 @@ export const racialAbilities: RacialAbilities[] = [
         race: "Blood Elf",
         racialAbilities: [
             {
-                expansion: "wotlk",
+                expansion: ["wotlk"],
                 activeRacialAbilities: ["Arcane Torrent", "Mana Tap"]
             },
             {
-                expansion: "dragonflight",
+                expansion: ["dragonflight"],
                 activeRacialAbilities: ["Arcane Torrent"]
             }
         ]
     },
     {
+        race: "Dark Iron Dwarf",
+        racialAbilities: [{ expansion: ["dragonflight"], activeRacialAbilities: ["Fireblood"] }]
+    },
+    {
         race: "Dracthyr",
         racialAbilities: [
             {
-                expansion: "dragonflight",
+                expansion: ["dragonflight"],
                 activeRacialAbilities: [
                     "Glide",
                     "Soar",
@@ -74,6 +78,48 @@ export const racialAbilities: RacialAbilities[] = [
                     "Tail Swipe",
                     "Wing Buffet"
                 ]
+            }
+        ]
+    },
+    {
+        race: "Draenei",
+        racialAbilities: [
+            { expansion: ["wotlk", "dragonflight"], activeRacialAbilities: ["Gift of the Naaru"] }
+        ]
+    },
+    {
+        race: "Dwarf",
+        racialAbilities: [
+            {
+                expansion: ["classic", "dragonflight", "wotlk"],
+                activeRacialAbilities: ["Stoneform"]
+            }
+        ]
+    },
+    {
+        race: "Gnome",
+        racialAbilities: [
+            {
+                expansion: ["classic", "dragonflight", "wotlk"],
+                activeRacialAbilities: ["Escape Artist"]
+            }
+        ]
+    },
+    {
+        race: "Goblin",
+        racialAbilities: [
+            {
+                expansion: ["dragonflight"],
+                activeRacialAbilities: ["Rocket Barrage", "Rocket Jump"]
+            }
+        ]
+    },
+    {
+        race: "Highmountain Tauren",
+        racialAbilities: [
+            {
+                expansion: ["dragonflight"],
+                activeRacialAbilities: ["Bull Rush"]
             }
         ]
     }
