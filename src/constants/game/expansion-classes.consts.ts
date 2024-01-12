@@ -1,5 +1,5 @@
-import { PlayerClass } from "src/constants/player/class.consts";
-import { Expansion } from "src/constants/game/expansion.consts";
+import { PLAYER_CLASS, PlayerClass } from "src/constants/player/class.consts";
+import { EXPANSION, Expansion } from "src/constants/game/expansion.consts";
 
 export type ClassesAllowedInExpansion = {
     expansion: Expansion;
@@ -8,49 +8,49 @@ export type ClassesAllowedInExpansion = {
 
 export const classesAllowedInExpansions: ClassesAllowedInExpansion[] = [
     {
-        expansion: "classic",
+        expansion: EXPANSION.CLASSIC,
         allowedClasses: [
-            "Druid",
-            "Hunter",
-            "Mage",
-            "Paladin",
-            "Priest",
-            "Rogue",
-            "Shaman",
-            "Warlock",
-            "Warrior"
+            PLAYER_CLASS.DRUID,
+            PLAYER_CLASS.HUNTER,
+            PLAYER_CLASS.MAGE,
+            PLAYER_CLASS.PALADIN,
+            PLAYER_CLASS.PRIEST,
+            PLAYER_CLASS.ROGUE,
+            PLAYER_CLASS.SHAMAN,
+            PLAYER_CLASS.WARLOCK,
+            PLAYER_CLASS.WARRIOR
         ]
     },
     {
-        expansion: "wotlk",
+        expansion: EXPANSION.DRAGONFLIGHT,
         allowedClasses: [
-            "Death Knight",
-            "Druid",
-            "Hunter",
-            "Mage",
-            "Paladin",
-            "Priest",
-            "Rogue",
-            "Shaman",
-            "Warlock",
-            "Warrior"
+            PLAYER_CLASS.DEATH_KNIGHT,
+            PLAYER_CLASS.DRUID,
+            PLAYER_CLASS.EVOKER,
+            PLAYER_CLASS.HUNTER,
+            PLAYER_CLASS.MAGE,
+            PLAYER_CLASS.MONK,
+            PLAYER_CLASS.PALADIN,
+            PLAYER_CLASS.PRIEST,
+            PLAYER_CLASS.ROGUE,
+            PLAYER_CLASS.SHAMAN,
+            PLAYER_CLASS.WARLOCK,
+            PLAYER_CLASS.WARRIOR
         ]
     },
     {
-        expansion: "dragonflight",
+        expansion: EXPANSION.WOTLK,
         allowedClasses: [
-            "Death Knight",
-            "Druid",
-            "Evoker",
-            "Hunter",
-            "Mage",
-            "Monk",
-            "Paladin",
-            "Priest",
-            "Rogue",
-            "Shaman",
-            "Warlock",
-            "Warrior"
+            PLAYER_CLASS.DEATH_KNIGHT,
+            PLAYER_CLASS.DRUID,
+            PLAYER_CLASS.HUNTER,
+            PLAYER_CLASS.MAGE,
+            PLAYER_CLASS.PALADIN,
+            PLAYER_CLASS.PRIEST,
+            PLAYER_CLASS.ROGUE,
+            PLAYER_CLASS.SHAMAN,
+            PLAYER_CLASS.WARLOCK,
+            PLAYER_CLASS.WARRIOR
         ]
     }
 ];

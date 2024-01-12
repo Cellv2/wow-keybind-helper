@@ -1,4 +1,4 @@
-import { PlayerClass } from "./class.consts";
+import { PLAYER_CLASS, PlayerClass } from "./class.consts";
 
 export type Ability = {
     name: string;
@@ -16,7 +16,7 @@ export type ClassAbilities = {
 
 export const classAbilities: ClassAbilities[] = [
     {
-        class: "Death Knight",
+        class: PLAYER_CLASS.DEATH_KNIGHT,
         abilities: [
             {
                 name: "Death Grip"
@@ -28,7 +28,7 @@ export const classAbilities: ClassAbilities[] = [
         talents: []
     },
     {
-        class: "Druid",
+        class: PLAYER_CLASS.DRUID,
         abilities: [
             {
                 name: "Entangling Roots"

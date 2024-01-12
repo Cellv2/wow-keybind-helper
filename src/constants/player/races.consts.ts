@@ -1,26 +1,29 @@
-const races = [
-    "Blood Elf",
-    "Dark Iron Dwarf",
-    "Dracthyr",
-    "Draenei",
-    "Dwarf",
-    "Gnome",
-    "Goblin",
-    "Highmountain Tauren",
-    "Human",
-    "Kul Tiran",
-    "Lightforged Draenei",
-    "Mag'har Orc",
-    "Mechagnome",
-    "Night Elf",
-    "Nightborne",
-    "Orc",
-    "Pandaren",
-    "Tauren",
-    "Troll",
-    "Void Elf",
-    "Vulpera",
-    "Worgen",
-    "Zandalari Troll"
-] as const;
-export type PlayerRace = (typeof races)[number];
+import { ObjectValue } from "src/types/utility.types";
+
+export const PLAYER_RACE = {
+    BLOOD_ELF: "Blood Elf",
+    DARK_IRON_DWARF: "Dark Iron Dwarf",
+    DRACTHYR: "Dracthyr",
+    DRAENEI: "Draenei",
+    DWARF: "Dwarf",
+    GNOME: "Gnome",
+    GOBLIN: "Goblin",
+    HIGHMOUNTAIN_TAUREN: "Highmountain Tauren",
+    HUMAN: "Human",
+    KUL_TIRAN: "Kul Tiran",
+    LIGHTFORGED_DRAENEI: "Lightforged Draenei",
+    MAGHAR_ORC: "Mag'har Orc",
+    MECHAGNOME: "Mechagnome",
+    NIGHT_ELF: "Night Elf",
+    NIGHTBORNE: "Nightborne",
+    ORC: "Orc",
+    PANDAREN: "Pandaren",
+    TAUREN: "Tauren",
+    TROLL: "Troll",
+    VOID_ELF: "Void Elf",
+    VULPERA: "Vulpera",
+    WORGEN: "Worgen",
+    ZANDALARI_TROLL: "Zandalari Troll"
+} as const;
+
+export type PlayerRace = ObjectValue<typeof PLAYER_RACE>;
