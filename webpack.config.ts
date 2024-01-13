@@ -30,9 +30,42 @@ const webpackConfig = (env: any): Configuration => ({
                 },
                 exclude: /dist/
             },
+            // {
+            //     test: /\.(s(a|c)ss)$/,
+            //     use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+            // },
             {
-                test: /\.(css)$/,
-                use: ["style-loader", "css-loader"]
+                test: /\.module\.s(a|c)ss$/,
+                use: [
+                    isDevelopment ? "style-loader" : MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true,
+                            sourceMap: isDevelopment
+                        }
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: isDevelopment
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.s(a|c)ss$/,
+                exclude: /\.module.(s(a|c)ss)$/,
+                use: [
+                    isDevelopment ? "style-loader" : MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: isDevelopment
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -49,8 +82,8 @@ const webpackConfig = (env: any): Configuration => ({
         new ESLintPlugin({ files: "./src/**/*.{ts,tsx,js,jsx}" }),
         new Dotenv(),
         new MiniCssExtractPlugin({
-            filename: isDevelopment ? "[name].css" : "[name].[hash].css",
-            chunkFilename: isDevelopment ? "[id].css" : "[id].[hash].css"
+            filename: isDevelopment ? "[name].css" : "[name].[contenthash].css",
+            chunkFilename: isDevelopment ? "[id].css" : "[id].[contenthash].css"
         })
     ]
 });
