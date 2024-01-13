@@ -45,6 +45,7 @@ const webpackConfig = (env: any): Configuration => ({
                             sourceMap: isDevelopment
                         }
                     },
+                    "postcss-loader",
                     {
                         loader: "sass-loader",
                         options: {
@@ -59,6 +60,7 @@ const webpackConfig = (env: any): Configuration => ({
                 use: [
                     isDevelopment ? "style-loader" : MiniCssExtractPlugin.loader,
                     "css-loader",
+                    "postcss-loader",
                     {
                         loader: "sass-loader",
                         options: {
