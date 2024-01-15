@@ -3,8 +3,7 @@ import { TalentSelectorGrid } from "../talents/TalentSelectorGrid";
 import { SelectionGrid } from "../Selections/SelectionGrid";
 import { EXPANSION } from "src/constants/game/expansion.consts";
 
-// @ts-expect-error awd
-import styles from "./HelloWorld.module";
+import styles from "./HelloWorld.module.scss";
 
 export type HelloWorldProps = {
     title: string;

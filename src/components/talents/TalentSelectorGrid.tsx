@@ -2,8 +2,7 @@ import React from "react";
 import { ClassAbilities, classAbilities } from "src/constants/player/abilities.consts";
 import "src/components/talents/TalentSelectorGrid.module.scss";
 
-// @ts-expect-error awd
-import styles from "./TalentSelectorGrid.module";
+import styles from "./TalentSelectorGrid.module.scss";
 
 // type TalentSelectorGridProps = {};
 
@@ -19,6 +18,9 @@ export const TalentSelectorGrid = () => {
         return (
             <>
                 <p className={styles.red}>{item.class}</p>
+                <div className={styles.red}>
+                    <p className={styles.violet}>This is violet</p>
+                </div>
                 <ol>
                     {item.talents.map((talent) => (
                         <li key={talent.name}>{talent.name}</li>
