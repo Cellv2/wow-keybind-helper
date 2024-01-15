@@ -3,6 +3,9 @@ import { TalentSelectorGrid } from "../talents/TalentSelectorGrid";
 import { SelectionGrid } from "../Selections/SelectionGrid";
 import { EXPANSION } from "src/constants/game/expansion.consts";
 
+// @ts-expect-error awd
+import styles from "./HelloWorld.module";
+
 export type HelloWorldProps = {
     title: string;
 };
@@ -14,7 +17,7 @@ const HelloWorld = ({ title }: HelloWorldProps) => (
         <hr />
 
         <h3>Environmental variables:</h3>
-        <p>
+        <p className={styles.red}>
             process.env.PRODUCTION: <b>{process.env.PRODUCTION?.toString()}</b>
         </p>
         <p>
