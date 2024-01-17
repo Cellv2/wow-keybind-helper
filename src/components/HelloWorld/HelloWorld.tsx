@@ -11,7 +11,7 @@ export type HelloWorldProps = {
 
 const HelloWorld = ({ title }: HelloWorldProps) => (
     <>
-        <h1>{title}</h1>
+        <h1 className="text-3xl font-bold underline">{title}</h1>
 
         <hr />
 
