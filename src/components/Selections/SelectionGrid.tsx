@@ -7,12 +7,12 @@ type SelectionGridProps = {
 export const SelectionGrid = (props: SelectionGridProps) => {
     const elements = props.gridItems.map((item) => {
         return (
-            <>
+            <div key={item} className="flex-auto grow">
                 <p>I am an image</p>
-                <p key={item}>{item}</p>
-            </>
+                <p>{item}</p>
+            </div>
         );
     });
 
-    return <>{elements}</>;
+    return <div className="flex">{elements}</div>;
 };
