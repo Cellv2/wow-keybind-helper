@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import expansionSelectorReducer from "../features/expansion/expansionSelectorSlice";
 
 export const store = configureStore({
-    reducer: {}
+    reducer: {
+        expansionSelector: expansionSelectorReducer
+    }
 });
 
 export type RootState = ReturnType<typeof store.getState>;

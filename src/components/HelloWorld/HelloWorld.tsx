@@ -1,8 +1,8 @@
 import React from "react";
-import { TalentSelectorGrid } from "../talents/TalentSelectorGrid";
-import { SelectionGrid } from "../Selections/SelectionGrid";
 import { EXPANSION } from "src/constants/game/expansion.consts";
-
+import { ExpansionSelector } from "src/features/expansion/ExpansionSelector";
+import { SelectionGrid } from "../Selections/SelectionGrid";
+import { TalentSelectorGrid } from "../talents/TalentSelectorGrid";
 import styles from "./HelloWorld.module.scss";
 
 export type HelloWorldProps = {
@@ -29,6 +29,8 @@ const HelloWorld = ({ title }: HelloWorldProps) => (
         <TalentSelectorGrid />
 
         <SelectionGrid gridItems={[EXPANSION.CLASSIC, EXPANSION.DRAGONFLIGHT, EXPANSION.WOTLK]} />
+
+        <ExpansionSelector />
     </>
 );
 
