@@ -1,5 +1,6 @@
 import React from "react";
 import { EXPANSION } from "src/constants/game/expansion.consts";
+import { PlayerClassSelector } from "src/features/class/PlayerClassSelector";
 import { ExpansionSelector } from "src/features/expansion/ExpansionSelector";
 import { SelectionGrid } from "../Selections/SelectionGrid";
 import { TalentSelectorGrid } from "../talents/TalentSelectorGrid";
@@ -31,6 +32,8 @@ const HelloWorld = ({ title }: HelloWorldProps) => (
         <SelectionGrid gridItems={[EXPANSION.CLASSIC, EXPANSION.DRAGONFLIGHT, EXPANSION.WOTLK]} />
 
         <ExpansionSelector />
+
+        <PlayerClassSelector />
     </>
 );
 
