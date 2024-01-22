@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import playerClassSelectorReducer from "../features/class/playerClassSelectorSlice";
 import expansionSelectorReducer from "../features/expansion/expansionSelectorSlice";
 
 export const store = configureStore({
     reducer: {
-        expansionSelector: expansionSelectorReducer
+        expansionSelector: expansionSelectorReducer,
+        playerClassSelector: playerClassSelectorReducer
     }
 });
 
