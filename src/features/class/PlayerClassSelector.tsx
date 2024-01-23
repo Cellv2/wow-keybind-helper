@@ -1,19 +1,27 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "src/app/hooks";
-import { PLAYER_CLASS, PlayerClass } from "src/constants/player/class.consts";
+import { classesAllowedInExpansions } from "src/constants/game/expansion-classes.consts";
+import { PlayerClass } from "src/constants/player/class.consts";
+import { selectExpansion } from "../expansion/expansionSelectorSlice";
 import { selectPlayerClass, setPlayerClass } from "./playerClassSelectorSlice";
 
 export const PlayerClassSelector = () => {
-    const playerClass = useAppSelector(selectPlayerClass);
+    const selectedPlayerClass = useAppSelector(selectPlayerClass);
+    const selectedExpansion = useAppSelector(selectExpansion);
 
-    const classElements = Object.values(PLAYER_CLASS).map((playerClassName) => (
+    // should be fine, there shouldn't be duplicate expansion names
+    const selectedExpansionAllowedClasses = classesAllowedInExpansions.filter(
+        (item) => item.expansion === selectedExpansion
+    )[0].allowedClasses;
+
+    const classElements = selectedExpansionAllowedClasses.map((playerClassName) => (
         <PlayerClassSelection key={playerClassName} class={playerClassName} />
     ));
 
     return (
         <>
             {classElements}
-            <div>Currely selected class: {playerClass}</div>
+            <div>Currely selected class: {selectedPlayerClass}</div>
         </>
     );
 };
