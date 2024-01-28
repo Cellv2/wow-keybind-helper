@@ -1,4 +1,4 @@
-import { ObjectValue } from "src/types/utility.types";
+import { ObjectValue } from "@src/types/utility.types";
 
 export const PLAYER_RACE = {
     BLOOD_ELF: "Blood Elf",

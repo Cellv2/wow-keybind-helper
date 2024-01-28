@@ -1,6 +1,6 @@
 import React from "react";
-import { ClassAbilities, classAbilities } from "src/constants/player/abilities.consts";
-import "src/components/talents/TalentSelectorGrid.module.scss";
+import { ClassAbilities, classAbilities } from "@src/constants/player/abilities.consts";
+// import "src/components/talents/TalentSelectorGrid.module.scss";
 
 import styles from "./TalentSelectorGrid.module.scss";
 

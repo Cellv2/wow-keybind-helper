@@ -1,7 +1,7 @@
 import React from "react";
-import { EXPANSION } from "src/constants/game/expansion.consts";
-import { PlayerClassSelector } from "src/features/class/PlayerClassSelector";
-import { ExpansionSelector } from "src/features/expansion/ExpansionSelector";
+import { EXPANSION } from "@src/constants/game/expansion.consts";
+import { PlayerClassSelector } from "@src/features/class/PlayerClassSelector";
+import { ExpansionSelector } from "@src/features/expansion/ExpansionSelector";
 import { SelectionGrid } from "../Selections/SelectionGrid";
 import { TalentSelectorGrid } from "../talents/TalentSelectorGrid";
 import styles from "./HelloWorld.module.scss";

@@ -1,7 +1,7 @@
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "src/app/store";
-import { PLAYER_CLASS, PlayerClass } from "src/constants/player/class.consts";
+import { RootState } from "@src/app/store";
+import { PLAYER_CLASS, PlayerClass } from "@src/constants/player/class.consts";
 
 export interface PlayerClassSelectionState {
     playerClass: PlayerClass;

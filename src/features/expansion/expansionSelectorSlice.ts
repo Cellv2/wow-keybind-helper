@@ -1,7 +1,7 @@
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "src/app/store";
-import { Expansion } from "src/constants/game/expansion.consts";
+import { RootState } from "@src/app/store";
+import { Expansion } from "@src/constants/game/expansion.consts";
 
 export interface ExpansionSelectionState {
     expansion: Expansion;

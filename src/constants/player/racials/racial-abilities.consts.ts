@@ -1,5 +1,5 @@
-import { EXPANSION, Expansion } from "src/constants/game/expansion.consts";
-import { ObjectValue } from "src/types/utility.types";
+import { EXPANSION, Expansion } from "@src/constants/game/expansion.consts";
+import { ObjectValue } from "@src/types/utility.types";
 import { PLAYER_RACE, PlayerRace } from "../races.consts";
 
 const ACTIVE_RACIAL_ABILITIES = {
