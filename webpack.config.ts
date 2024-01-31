@@ -68,6 +68,10 @@ const webpackConfig = (env: any): Configuration => ({
                         }
                     }
                 ]
+            },
+            {
+                test: /\.(png|jp(e*)g|svg|gif)$/,
+                type: "asset/resource"
             }
         ]
     },

@@ -1,7 +1,8 @@
-import React from "react";
 import { EXPANSION } from "@src/constants/game/expansion.consts";
 import { PlayerClassSelector } from "@src/features/class/PlayerClassSelector";
 import { ExpansionSelector } from "@src/features/expansion/ExpansionSelector";
+import React from "react";
+import { AbilityIconMemoized } from "../Ability/AbilityIcon";
 import { SelectionGrid } from "../Selections/SelectionGrid";
 import { TalentSelectorGrid } from "../talents/TalentSelectorGrid";
 import styles from "./HelloWorld.module.scss";
@@ -34,6 +35,8 @@ const HelloWorld = ({ title }: HelloWorldProps) => (
         <ExpansionSelector />
 
         <PlayerClassSelector />
+
+        <AbilityIconMemoized name="test" iconPath="path" />
     </>
 );
 
