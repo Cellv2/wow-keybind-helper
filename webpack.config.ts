@@ -5,7 +5,12 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import path from "path";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
-import webpack, { Configuration } from "webpack";
+import webpack, { Configuration as WebpackConfiguration } from "webpack";
+import type { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server";
+
+interface Configuration extends WebpackConfiguration {
+    devServer?: WebpackDevServerConfiguration;
+}
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
@@ -91,7 +96,15 @@ const webpackConfig = (env: any): Configuration => ({
             filename: isDevelopment ? "[name].css" : "[name].[contenthash].css",
             chunkFilename: isDevelopment ? "[id].css" : "[id].[contenthash].css"
         })
-    ]
+    ],
+    devServer: {
+        // https://webpack.js.org/configuration/dev-server/#devserverhistoryapifallback
+        // Apache -> mod_rewrite
+        // Nginx -> rewrite
+        // Webpack Dev Server -> historyApiFallback
+        // Express/Koa/Hapi/etc. -> a wildcard route to your index.html
+        historyApiFallback: true
+    }
 });
 
 export default webpackConfig;

@@ -23,6 +23,10 @@ const router = createBrowserRouter([
                 path: "/different",
                 element: <div>different</div>
             }
+            // ,{
+            //     path: "*",
+            //     element: <ErrorPage />
+            // }
         ]
     },
     {
