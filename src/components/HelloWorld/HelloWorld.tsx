@@ -6,6 +6,7 @@ import { AbilityIconMemoized } from "../Ability/AbilityIcon";
 import { SelectionGrid } from "../Selections/SelectionGrid";
 import { TalentSelectorGrid } from "../talents/TalentSelectorGrid";
 import styles from "./HelloWorld.module.scss";
+import { AbilityBindingGrid } from "../AbilityBinding/AbilityBindingGrid";
 
 export type HelloWorldProps = {
     title: string;
@@ -37,6 +38,8 @@ const HelloWorld = ({ title }: HelloWorldProps) => (
         <PlayerClassSelector />
 
         <AbilityIconMemoized name="test" iconPath="path" />
+
+        <AbilityBindingGrid abilityNames={["Shiv", "Backstab"]} />
     </>
 );
 
