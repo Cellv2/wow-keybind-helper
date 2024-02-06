@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
     return (
-        <header className="bg-white">
+        <header>
             <nav
                 className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
                 aria-label="Global"
@@ -19,7 +19,7 @@ export const Header = () => {
                 <div className="flex lg:hidden">
                     <button
                         type="button"
-                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
                     >
                         <span className="sr-only">Open main menu</span>
                         <svg
@@ -39,15 +39,15 @@ export const Header = () => {
                     </button>
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <a href="#" className="text-sm font-semibold leading-6">
                         Bindings
                     </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <a href="#" className="text-sm font-semibold leading-6">
                         Talents
                     </a>
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <a href="#" className="text-sm font-semibold leading-6">
                         Log in <span aria-hidden="true">&rarr;</span>
                     </a>
                 </div>
@@ -56,13 +56,13 @@ export const Header = () => {
             <div className="lg:hidden" role="dialog" aria-modal="true">
                 {/* Background backdrop, show/hide based on slide-over state. */}
                 <div className="fixed inset-0 z-10"></div>
-                <div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
                         <a href="#" className="-m-1.5 p-1.5">
                             <span className="sr-only">WoW Keybinder</span>
                             <img className="h-8 w-auto" src={exampleUrl} alt="" />
                         </a>
-                        <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700">
+                        <button type="button" className="-m-2.5 rounded-md p-2.5">
                             <span className="sr-only">Close menu</span>
                             <svg
                                 className="h-6 w-6"
@@ -85,13 +85,13 @@ export const Header = () => {
                             <div className="space-y-2 py-6">
                                 <a
                                     href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                                 >
                                     Bindings
                                 </a>
                                 <a
                                     href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                                 >
                                     Talents
                                 </a>
@@ -99,7 +99,7 @@ export const Header = () => {
                             <div className="py-6">
                                 <a
                                     href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 hover:bg-gray-50"
                                 >
                                     Log in
                                 </a>
