@@ -5,10 +5,11 @@ type Props = { abilityName: string };
 
 export const AbilityBindingRow = (props: Props) => {
     return (
-        <div className="flex">
-            <div className="flex-initial w-20">ICON</div>
-            <div className="flex-initial w-40">{props.abilityName}</div>
-            <AbilityBindingKey className="flex-initial w-40" />
+        // <div className="grid gap-4 grid-flow-col auto-cols-max">
+        <div className="grid gap-4 grid-cols-7 text-center">
+            <div className="">ICON</div>
+            <div className="col-span-3">{props.abilityName}</div>
+            <AbilityBindingKey className="col-span-3" />
         </div>
     );
 };
