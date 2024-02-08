@@ -39,7 +39,7 @@ const HelloWorld = ({ title }: HelloWorldProps) => (
 
         <AbilityIconMemoized name="test" iconPath="path" />
 
-        <AbilityBindingGrid abilityNames={["Shiv", "Backstab"]} />
+        <AbilityBindingGrid sectionName="Class Abilities" abilityNames={["Shiv", "Backstab"]} />
     </>
 );
 
