@@ -1,6 +1,6 @@
-import { Expansion } from "@src/constants/game/expansion.consts";
+import { ItemSlot } from "@src/constants/equipment/item-slots.consts";
 
-export type SlotGadget = {
-    expansion: Expansion;
-    gadget: [];
-};
+export interface SlotGadgets {
+    slot: ItemSlot;
+    gadgets: string[];
+}

@@ -1,11 +1,12 @@
 import { ITEM_SLOT } from "@src/constants/equipment/item-slots.consts";
+import { WotlkSlotGadgets } from "@src/models/gadgets/wotlk-slot-gadgets";
 
 export const WOTLK_GADGETS = {
     NITROS: "Nitro Boosts",
     ROCKET_GLOVES: "Hand-Mounted Pyro Rocket"
 } as const;
 
-export const Gadgets_Wotlk = [
+export const SlotGadgets_Wotlk: WotlkSlotGadgets[] = [
     {
         slot: ITEM_SLOT.FEET,
         gadgets: [WOTLK_GADGETS.NITROS]
