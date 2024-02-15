@@ -8,46 +8,60 @@ import { SelectionGrid } from "../Selections/SelectionGrid";
 import { SideBar } from "../shared/SideBar";
 import { TalentSelectorGrid } from "../talents/TalentSelectorGrid";
 import styles from "./HelloWorld.module.scss";
+import { WotlkGadgetService } from "@src/services/gadgets/wotlk-gadget.service";
 
 export type HelloWorldProps = {
     title: string;
 };
 
-const HelloWorld = ({ title }: HelloWorldProps) => (
-    <main className=" grid grid-cols-5">
-        <SideBar className="col-span-1" />
+const HelloWorld = ({ title }: HelloWorldProps) => {
+    const wotlkGadgetsService = new WotlkGadgetService();
+    const wotlkGadgetNames = wotlkGadgetsService.getAllGadgetNames();
 
-        <div className="col-span-4">
-            <h1 className="text-3xl font-bold underline">{title}</h1>
+    return (
+        <main className=" grid grid-cols-5">
+            <SideBar className="col-span-1" />
 
-            <hr />
+            <div className="col-span-4">
+                <h1 className="text-3xl font-bold underline">{title}</h1>
 
-            <h3>Environmental variables:</h3>
-            <p className={styles.red}>
-                process.env.PRODUCTION: <b>{process.env.PRODUCTION?.toString()}</b>
-            </p>
-            <p>
-                process.env.NAME: <b>{process.env.NAME}</b>
-            </p>
-            <p>
-                process.env.VERSION: <b>{process.env.VERSION}</b>
-            </p>
+                <hr />
 
-            <TalentSelectorGrid />
+                <h3>Environmental variables:</h3>
+                <p className={styles.red}>
+                    process.env.PRODUCTION: <b>{process.env.PRODUCTION?.toString()}</b>
+                </p>
+                <p>
+                    process.env.NAME: <b>{process.env.NAME}</b>
+                </p>
+                <p>
+                    process.env.VERSION: <b>{process.env.VERSION}</b>
+                </p>
 
-            <SelectionGrid
-                gridItems={[EXPANSION.CLASSIC, EXPANSION.DRAGONFLIGHT, EXPANSION.WOTLK]}
-            />
+                <TalentSelectorGrid />
 
-            <ExpansionSelector />
+                <SelectionGrid
+                    gridItems={[EXPANSION.CLASSIC, EXPANSION.DRAGONFLIGHT, EXPANSION.WOTLK]}
+                />
 
-            <PlayerClassSelector />
+                <ExpansionSelector />
 
-            <AbilityIconMemoized name="test" iconPath="path" />
+                <PlayerClassSelector />
 
-            <AbilityBindingGrid sectionName="Class Abilities" abilityNames={["Shiv", "Backstab"]} />
-        </div>
-    </main>
-);
+                <AbilityIconMemoized name="test" iconPath="path" />
+
+                <AbilityBindingGrid
+                    sectionName="Class Abilities"
+                    abilityNames={["Shiv", "Backstab"]}
+                />
+
+                <AbilityBindingGrid
+                    sectionName="Engineering Gadgets"
+                    abilityNames={wotlkGadgetNames}
+                />
+            </div>
+        </main>
+    );
+};
 
 export default HelloWorld;
