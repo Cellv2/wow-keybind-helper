@@ -6,7 +6,7 @@ type Props = { children?: React.ReactNode };
 
 export const MainLayout = (props: Props) => {
     return (
-        <main className="dark:bg-blue-950 dark:text-white h-screen">
+        <main className="dark:bg-blue-950 dark:text-white h-full">
             <Header />
             <Outlet />
         </main>
