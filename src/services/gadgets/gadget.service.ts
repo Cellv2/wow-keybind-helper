@@ -19,7 +19,7 @@ export abstract class GadgetService<T extends SlotGadgets> implements GadgetServ
     };
 
     getGadgetForSlot = (slot: ItemSlot): T | null => {
-        const x = this.availableGadgets.find((gadget) => gadget.slot === slot) ?? null;
-        return x;
+        const slotGadget = this.availableGadgets.find((gadget) => gadget.slot === slot) ?? null;
+        return slotGadget;
     };
 }
