@@ -1,7 +1,7 @@
-import React from "react";
 import { useAppDispatch, useAppSelector } from "@src/app/hooks";
 import { classesAllowedInExpansions } from "@src/constants/game/expansion-classes.consts";
 import { PlayerClass } from "@src/constants/player/class.consts";
+import React from "react";
 import { selectExpansion } from "../expansion/expansionSelectorSlice";
 import { selectPlayerClass, setPlayerClass } from "./playerClassSelectorSlice";
 
@@ -20,7 +20,7 @@ export const PlayerClassSelector = () => {
 
     return (
         <>
-            {classElements}
+            <div className="grid grid-cols-2">{classElements}</div>
             <div>Currely selected class: {selectedPlayerClass}</div>
         </>
     );
@@ -33,5 +33,9 @@ type PlayerClassSelectionProps = {
 export const PlayerClassSelection = (props: PlayerClassSelectionProps) => {
     const dispatch = useAppDispatch();
 
-    return <button onClick={() => dispatch(setPlayerClass(props.class))}>{props.class}</button>;
+    return (
+        <button className="last:col-span-2" onClick={() => dispatch(setPlayerClass(props.class))}>
+            {props.class}
+        </button>
+    );
 };
