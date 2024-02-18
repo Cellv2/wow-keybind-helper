@@ -11,6 +11,7 @@ export const PlayerClassColorMappings: PlayerClassColorMapping[] = [
         playerClass: PLAYER_CLASS.DEATH_KNIGHT,
         hexColor: "#C41E3A"
     },
+    { playerClass: PLAYER_CLASS.DEMON_HUNTER, hexColor: "#A330C9" },
     { playerClass: PLAYER_CLASS.DRUID, hexColor: "#FF7C0A" },
     { playerClass: PLAYER_CLASS.EVOKER, hexColor: "#33937F" },
     { playerClass: PLAYER_CLASS.HUNTER, hexColor: "#AAD372" },

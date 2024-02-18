@@ -25,6 +25,7 @@ export const classesAllowedInExpansions: ClassesAllowedInExpansion[] = [
         expansion: EXPANSION.DRAGONFLIGHT,
         allowedClasses: [
             PLAYER_CLASS.DEATH_KNIGHT,
+            PLAYER_CLASS.DEMON_HUNTER,
             PLAYER_CLASS.DRUID,
             PLAYER_CLASS.EVOKER,
             PLAYER_CLASS.HUNTER,

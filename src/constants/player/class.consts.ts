@@ -2,6 +2,7 @@ import { ObjectValue } from "@src/types/utility.types";
 
 export const PLAYER_CLASS = {
     DEATH_KNIGHT: "Death Knight",
+    DEMON_HUNTER: "Demon Hunter",
     DRUID: "Druid",
     EVOKER: "Evoker",
     HUNTER: "Hunter",
