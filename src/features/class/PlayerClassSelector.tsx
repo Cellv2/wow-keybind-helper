@@ -43,7 +43,7 @@ export const PlayerClassSelection = (props: PlayerClassSelectionProps) => {
 
     return (
         <button
-            className={`last:col-span-2 ${bgColor} ${textColor}`}
+            className={`last:odd:col-span-2 ${bgColor} ${textColor}`}
             onClick={() => dispatch(setPlayerClass(props.class))}
         >
             {props.class}
