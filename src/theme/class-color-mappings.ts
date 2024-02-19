@@ -1,7 +1,8 @@
-import { PLAYER_CLASS, PlayerClass } from "../player/class.consts";
+import { PLAYER_CLASS, PlayerClass } from "../constants/player/class.consts";
 
 export type PlayerClassTailwindThemeOptions = {
     background: string;
+    textColorOnBackground?: string;
 };
 
 export type PlayerClassColorMapping = {
@@ -56,12 +57,12 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.PRIEST,
         hexColor: "#FFFFFF",
-        tailwindThemeName: { background: "bg-priest" }
+        tailwindThemeName: { background: "bg-priest", textColorOnBackground: "text-slate-800" }
     },
     {
         playerClass: PLAYER_CLASS.ROGUE,
         hexColor: "#FFF468",
-        tailwindThemeName: { background: "bg-rogue" }
+        tailwindThemeName: { background: "bg-rogue", textColorOnBackground: "text-slate-800" }
     },
     {
         playerClass: PLAYER_CLASS.SHAMAN,

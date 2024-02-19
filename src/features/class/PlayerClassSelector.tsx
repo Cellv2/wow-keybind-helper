@@ -1,7 +1,8 @@
 import { useAppDispatch, useAppSelector } from "@src/app/hooks";
 import { classesAllowedInExpansions } from "@src/constants/game/expansion-classes.consts";
 import { PlayerClass } from "@src/constants/player/class.consts";
-import { playerClassColorMappings } from "@src/constants/theme/class-color-mappings";
+import { playerClassColorMappings } from "@src/theme/class-color-mappings";
+import { fallbackBackgroundColor, fallbackTextColor } from "@src/theme/fallback-color-mappings";
 import React from "react";
 import { selectExpansion } from "../expansion/expansionSelectorSlice";
 import { selectPlayerClass, setPlayerClass } from "./playerClassSelectorSlice";
@@ -33,12 +34,16 @@ type PlayerClassSelectionProps = {
 
 export const PlayerClassSelection = (props: PlayerClassSelectionProps) => {
     const dispatch = useAppDispatch();
-    const color = playerClassColorMappings.find((mapping) => mapping.playerClass === props.class)
-        ?.tailwindThemeName.background;
+    const targetColorMapping = playerClassColorMappings.find(
+        (mapping) => mapping.playerClass === props.class
+    );
+    const bgColor = targetColorMapping?.tailwindThemeName.background ?? fallbackBackgroundColor;
+    const textColor =
+        targetColorMapping?.tailwindThemeName.textColorOnBackground ?? fallbackTextColor;
 
     return (
         <button
-            className={`last:col-span-2 ${color}`}
+            className={`last:col-span-2 ${bgColor} ${textColor}`}
             onClick={() => dispatch(setPlayerClass(props.class))}
         >
             {props.class}
