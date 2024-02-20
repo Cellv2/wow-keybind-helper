@@ -6,7 +6,7 @@ type Props = { className?: string };
 
 export const SideBar = (props: Props = { className: "" }) => {
     return (
-        <div className={`${props.className} grid grid-flow-row`}>
+        <div className={`${props.className} grid grid-flow-row m-2`}>
             <p>SideBar</p>
             <ExpansionSelector />
             <PlayerClassSelector />

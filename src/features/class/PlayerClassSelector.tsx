@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "@src/app/hooks";
 import { classesAllowedInExpansions } from "@src/constants/game/expansion-classes.consts";
 import { PlayerClass } from "@src/constants/player/class.consts";
 import { playerClassColorMappings } from "@src/theme/class-color-mappings";
-import { fallbackBackgroundColor, fallbackTextColor } from "@src/theme/fallback-color-mappings";
+import { fallbackTextColor, fallbackTextColorHover } from "@src/theme/fallback-color-mappings";
 import React from "react";
 import { selectExpansion } from "../expansion/expansionSelectorSlice";
 import { selectPlayerClass, setPlayerClass } from "./playerClassSelectorSlice";
@@ -22,7 +22,7 @@ export const PlayerClassSelector = () => {
 
     return (
         <>
-            <div className="grid grid-cols-2">{classElements}</div>
+            <div className="grid grid-cols-2 gap-2">{classElements}</div>
             <div>Currely selected class: {selectedPlayerClass}</div>
         </>
     );
@@ -34,16 +34,19 @@ type PlayerClassSelectionProps = {
 
 export const PlayerClassSelection = (props: PlayerClassSelectionProps) => {
     const dispatch = useAppDispatch();
+
     const targetColorMapping = playerClassColorMappings.find(
         (mapping) => mapping.playerClass === props.class
     );
-    const bgColor = targetColorMapping?.tailwindThemeName.background ?? fallbackBackgroundColor;
-    const textColor =
-        targetColorMapping?.tailwindThemeName.textColorOnBackground ?? fallbackTextColor;
+    const bgHoverColor = targetColorMapping?.tailwindThemeName.backgroundHover;
+    const ringColor = targetColorMapping?.tailwindThemeName.ringColor ?? "";
+    const textColor = targetColorMapping?.tailwindThemeName.textColor ?? fallbackTextColor;
+    const textColorHover =
+        targetColorMapping?.tailwindThemeName.textColorOnBackgroundHover ?? fallbackTextColorHover;
 
     return (
         <button
-            className={`last:odd:col-span-2 ${bgColor} ${textColor}`}
+            className={`last:odd:col-span-2 ring-1 ring-inset ${ringColor} ${textColor} ${bgHoverColor} ${textColorHover}`}
             onClick={() => dispatch(setPlayerClass(props.class))}
         >
             {props.class}
