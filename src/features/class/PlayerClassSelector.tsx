@@ -1,11 +1,9 @@
-import { useAppDispatch, useAppSelector } from "@src/app/hooks";
+import { useAppSelector } from "@src/app/hooks";
 import { classesAllowedInExpansions } from "@src/constants/game/expansion-classes.consts";
-import { PlayerClass } from "@src/constants/player/class.consts";
-import { playerClassColorMappings } from "@src/theme/class-color-mappings";
-import { fallbackTextColor, fallbackTextColorHover } from "@src/theme/fallback-color-mappings";
 import React from "react";
 import { selectExpansion } from "../expansion/expansionSelectorSlice";
-import { selectPlayerClass, setPlayerClass } from "./playerClassSelectorSlice";
+import { PlayerClassSelectionButton } from "./PlayerClassSelectionButton";
+import { selectPlayerClass } from "./playerClassSelectorSlice";
 
 export const PlayerClassSelector = () => {
     const selectedPlayerClass = useAppSelector(selectPlayerClass);
@@ -17,7 +15,7 @@ export const PlayerClassSelector = () => {
     )[0].allowedClasses;
 
     const classElements = selectedExpansionAllowedClasses.map((playerClassName) => (
-        <PlayerClassSelection key={playerClassName} class={playerClassName} />
+        <PlayerClassSelectionButton key={playerClassName} class={playerClassName} />
     ));
 
     return (
@@ -25,31 +23,5 @@ export const PlayerClassSelector = () => {
             <div className="grid grid-cols-2 gap-2">{classElements}</div>
             <div>Currely selected class: {selectedPlayerClass}</div>
         </>
-    );
-};
-
-type PlayerClassSelectionProps = {
-    class: PlayerClass;
-};
-
-export const PlayerClassSelection = (props: PlayerClassSelectionProps) => {
-    const dispatch = useAppDispatch();
-
-    const targetColorMapping = playerClassColorMappings.find(
-        (mapping) => mapping.playerClass === props.class
-    );
-    const bgHoverColor = targetColorMapping?.tailwindThemeName.backgroundHover;
-    const ringColor = targetColorMapping?.tailwindThemeName.ringColor ?? "";
-    const textColor = targetColorMapping?.tailwindThemeName.textColor ?? fallbackTextColor;
-    const textColorHover =
-        targetColorMapping?.tailwindThemeName.textColorOnBackgroundHover ?? fallbackTextColorHover;
-
-    return (
-        <button
-            className={`last:odd:col-span-2 ring-1 ring-inset ${ringColor} ${textColor} ${bgHoverColor} ${textColorHover}`}
-            onClick={() => dispatch(setPlayerClass(props.class))}
-        >
-            {props.class}
-        </button>
     );
 };
