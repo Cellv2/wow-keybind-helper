@@ -1,4 +1,5 @@
 import { PlayerClassSelector } from "@src/features/class/PlayerClassSelector";
+import { ConsumableSelector } from "@src/features/consumables/ConsumableSelector";
 import { ExpansionSelector } from "@src/features/expansion/ExpansionSelector";
 import { ProfessionSelector } from "@src/features/profession/ProfessionSelector";
 import React from "react";
@@ -12,6 +13,7 @@ export const SideBar = (props: Props = { className: "" }) => {
             <ExpansionSelector />
             <PlayerClassSelector />
             <ProfessionSelector />
+            <ConsumableSelector />
         </div>
     );
 };
