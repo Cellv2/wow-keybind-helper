@@ -1,9 +1,9 @@
-import React from "react";
 import { useAppDispatch, useAppSelector } from "@src/app/hooks";
-import { EXPANSION, Expansion } from "@src/constants/game/expansion.consts";
-import { selectExpansion, setExpansion } from "./expansionSelectorSlice";
+import { classesAllowedInExpansions } from "@src/data/game/expansion-classes";
+import { EXPANSION, Expansion } from "@src/data/game/expansions";
+import React from "react";
 import { selectPlayerClass, setPlayerClass } from "../class/playerClassSelectorSlice";
-import { classesAllowedInExpansions } from "@src/constants/game/expansion-classes.consts";
+import { selectExpansion, setExpansion } from "./expansionSelectorSlice";
 
 // type ExpansionSelectorProps = {};
 

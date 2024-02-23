@@ -1,4 +1,4 @@
-import { PLAYER_CLASS, PlayerClass } from "../constants/player/class.consts";
+import { PLAYER_CLASS, PlayerClass } from "../data/player/class/classes";
 
 export type PlayerClassTailwindThemeOptions = {
     background: string;

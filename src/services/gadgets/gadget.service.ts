@@ -1,4 +1,4 @@
-import { ItemSlot } from "@src/constants/equipment/item-slots.consts";
+import { ItemSlot } from "@src/data/game/item-slots";
 import { SlotGadgets } from "@src/models/gadgets/slot-gadget";
 
 interface GadgetServiceInterface<T extends SlotGadgets> {

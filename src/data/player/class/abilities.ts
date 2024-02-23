@@ -1,4 +1,4 @@
-import { PLAYER_CLASS, PlayerClass } from "./class.consts";
+import { PLAYER_CLASS, PlayerClass } from "./classes";
 
 export type Ability = {
     name: string;

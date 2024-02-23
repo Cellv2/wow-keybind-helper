@@ -1,6 +1,6 @@
-import { EXPANSION, Expansion } from "@src/constants/game/expansion.consts";
+import { EXPANSION, Expansion } from "@src/data/game/expansions";
 import { ObjectValue } from "@src/types/utility.types";
-import { PLAYER_RACE, PlayerRace } from "../races.consts";
+import { PLAYER_RACE, PlayerRace } from "./races";
 
 const ACTIVE_RACIAL_ABILITIES = {
     ANCESTRAL_CALL: "Ancestral Call",

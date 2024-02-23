@@ -1,4 +1,4 @@
-import { ITEM_SLOT } from "@src/constants/equipment/item-slots.consts";
+import { ITEM_SLOT } from "@src/data/game/item-slots";
 import { WotlkSlotGadgets } from "@src/models/gadgets/wotlk-slot-gadgets";
 
 export const WOTLK_GADGETS = {

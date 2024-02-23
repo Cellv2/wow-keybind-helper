@@ -1,5 +1,5 @@
 import { useAppDispatch } from "@src/app/hooks";
-import { PlayerClass } from "@src/constants/player/class.consts";
+import { PlayerClass } from "@src/data/player/class/classes";
 import { playerClassColorMappings } from "@src/theme/class-color-mappings";
 import { fallbackTextColor, fallbackTextColorHover } from "@src/theme/fallback-color-mappings";
 import React from "react";

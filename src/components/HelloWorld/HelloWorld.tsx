@@ -1,4 +1,4 @@
-import { EXPANSION } from "@src/constants/game/expansion.consts";
+import { EXPANSION } from "@src/data/game/expansions";
 import { PlayerClassSelector } from "@src/features/class/PlayerClassSelector";
 import { ExpansionSelector } from "@src/features/expansion/ExpansionSelector";
 import React from "react";

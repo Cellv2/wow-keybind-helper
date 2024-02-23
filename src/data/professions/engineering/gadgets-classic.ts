@@ -1,4 +1,4 @@
-import { ITEM_SLOT } from "@src/constants/equipment/item-slots.consts";
+import { ITEM_SLOT } from "@src/data/game/item-slots";
 import { ClassicSlotGadgets } from "@src/models/gadgets/classic-slot-gadgets";
 
 export const CLASSIC_GADGETS = {

@@ -1,5 +1,5 @@
 import { useAppSelector } from "@src/app/hooks";
-import { classesAllowedInExpansions } from "@src/constants/game/expansion-classes.consts";
+import { classesAllowedInExpansions } from "@src/data/game/expansion-classes";
 import React from "react";
 import { selectExpansion } from "../expansion/expansionSelectorSlice";
 import { PlayerClassSelectionButton } from "./PlayerClassSelectionButton";
