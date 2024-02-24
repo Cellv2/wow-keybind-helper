@@ -25,7 +25,11 @@ export const ExpansionSelectionButton = ({ expansion }: Props) => {
         dispatch(setExpansion(expansionSelection));
     };
 
-    return <button onClick={() => handleSetExpansionOnClick(expansion)}>{expansion}</button>;
+    return (
+        <button
+            onClick={() => handleSetExpansionOnClick(expansion)}
+        >{`${expansion.charAt(0).toUpperCase()}${expansion.slice(1)}`}</button>
+    );
 };
 
 export const ExpansionSelectionButtonMemoized = React.memo(ExpansionSelectionButton);
