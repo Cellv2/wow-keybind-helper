@@ -17,7 +17,10 @@ module.exports = {
                 rogue: "#FFF468",
                 shaman: "#0070DD",
                 warlock: "#8788EE",
-                warrior: "#C69B6D"
+                warrior: "#C69B6D",
+                expansionClassic: "#F3E5AB",
+                expansionDragonflight: "#3A1200",
+                expansionWotlk: "#3463AC"
             }
         }
     },
