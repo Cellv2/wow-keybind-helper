@@ -1,19 +1,15 @@
+import { ButtonThemeMapping } from "@src/types/theme/ButtonThemeMapping";
 import { PLAYER_CLASS, PlayerClass } from "../data/player/class/classes";
 
-export type PlayerClassTailwindThemeOptions = {
+type PlayerClassThemeMapping = {
     background: string;
-    backgroundHover: string;
     outlineColor: string;
-    ringColor: string;
-    textColor: string;
-    textColorOnBackground?: string;
-    textColorOnBackgroundHover?: string;
-};
+} & ButtonThemeMapping;
 
-export type PlayerClassColorMapping = {
+type PlayerClassColorMapping = {
     playerClass: PlayerClass;
     hexColor: string;
-    tailwindThemeName: PlayerClassTailwindThemeOptions;
+    themeMapping: PlayerClassThemeMapping;
 };
 
 // https://wowpedia.fandom.com/wiki/Class_colors
@@ -22,7 +18,7 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.DEATH_KNIGHT,
         hexColor: "#C41E3A",
-        tailwindThemeName: {
+        themeMapping: {
             background: "bg-deathKnight",
             backgroundHover: "hover:bg-deathKnight",
             outlineColor: "outline-deathKnight",
@@ -33,7 +29,7 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.DEMON_HUNTER,
         hexColor: "#A330C9",
-        tailwindThemeName: {
+        themeMapping: {
             background: "bg-demonHunter",
             backgroundHover: "hover:bg-demonHunter",
             outlineColor: "outline-demonHunter",
@@ -44,7 +40,7 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.DRUID,
         hexColor: "#FF7C0A",
-        tailwindThemeName: {
+        themeMapping: {
             background: "bg-druid",
             backgroundHover: "hover:bg-druid",
             outlineColor: "outline-druid",
@@ -57,7 +53,7 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.EVOKER,
         hexColor: "#33937F",
-        tailwindThemeName: {
+        themeMapping: {
             background: "bg-evoker",
             backgroundHover: "hover:bg-evoker",
             outlineColor: "outline-evoker",
@@ -68,7 +64,7 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.HUNTER,
         hexColor: "#AAD372",
-        tailwindThemeName: {
+        themeMapping: {
             background: "bg-hunter",
             backgroundHover: "hover:bg-hunter",
             outlineColor: "outline-hunter",
@@ -79,7 +75,7 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.MAGE,
         hexColor: "#3FC7EB",
-        tailwindThemeName: {
+        themeMapping: {
             background: "bg-mage",
             backgroundHover: "hover:bg-mage",
             outlineColor: "outline-mage",
@@ -90,7 +86,7 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.MONK,
         hexColor: "#00FF98",
-        tailwindThemeName: {
+        themeMapping: {
             background: "bg-monk",
             backgroundHover: "hover:bg-monk",
             outlineColor: "outline-monk",
@@ -101,7 +97,7 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.PALADIN,
         hexColor: "#F48CBA",
-        tailwindThemeName: {
+        themeMapping: {
             background: "bg-paladin",
             backgroundHover: "hover:bg-paladin",
             outlineColor: "outline-paladin",
@@ -114,7 +110,7 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.PRIEST,
         hexColor: "#FFFFFF",
-        tailwindThemeName: {
+        themeMapping: {
             background: "bg-priest",
             backgroundHover: "hover:bg-priest",
             outlineColor: "outline-priest",
@@ -127,7 +123,7 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.ROGUE,
         hexColor: "#FFF468",
-        tailwindThemeName: {
+        themeMapping: {
             background: "bg-rogue",
             backgroundHover: "hover:bg-rogue",
             outlineColor: "outline-rogue",
@@ -140,7 +136,7 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.SHAMAN,
         hexColor: "#0070DD",
-        tailwindThemeName: {
+        themeMapping: {
             background: "bg-shaman",
             backgroundHover: "hover:bg-shaman",
             outlineColor: "outline-shaman",
@@ -151,7 +147,7 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.WARLOCK,
         hexColor: "#8788EE",
-        tailwindThemeName: {
+        themeMapping: {
             background: "bg-warlock",
             backgroundHover: "hover:bg-warlock",
             outlineColor: "outline-warlock",
@@ -162,7 +158,7 @@ export const playerClassColorMappings: PlayerClassColorMapping[] = [
     {
         playerClass: PLAYER_CLASS.WARRIOR,
         hexColor: "#C69B6D",
-        tailwindThemeName: {
+        themeMapping: {
             background: "bg-warrior",
             backgroundHover: "hover:bg-warrior",
             outlineColor: "outline-warrior",

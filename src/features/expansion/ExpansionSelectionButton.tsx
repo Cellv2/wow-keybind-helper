@@ -31,11 +31,11 @@ export const ExpansionSelectionButton = ({ expansion }: Props) => {
         (mapping) => mapping.expansion === expansion
     );
     console.log(targetColorMapping);
-    const bgHoverColor = targetColorMapping?.tailwindThemeOptions.backgroundHover;
-    const ringColor = targetColorMapping?.tailwindThemeOptions.ringColor ?? "";
-    const textColor = targetColorMapping?.tailwindThemeOptions.textColor ?? fallbackTextColor;
+    const bgHoverColor = targetColorMapping?.themeMapping.backgroundHover;
+    const ringColor = targetColorMapping?.themeMapping.ringColor ?? "";
+    const textColor = targetColorMapping?.themeMapping.textColor ?? fallbackTextColor;
     const textColorHover =
-        targetColorMapping?.tailwindThemeOptions.textColorOnBackgroundHover ??
+        targetColorMapping?.themeMapping.textColorOnBackgroundHover ??
         fallbackTextColorHover;
 
     return (

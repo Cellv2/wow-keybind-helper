@@ -14,11 +14,11 @@ export const PlayerClassSelectionButton = (props: PlayerClassSelectionProps) => 
     const targetColorMapping = playerClassColorMappings.find(
         (mapping) => mapping.playerClass === props.class
     );
-    const bgHoverColor = targetColorMapping?.tailwindThemeName.backgroundHover;
-    const ringColor = targetColorMapping?.tailwindThemeName.ringColor ?? "";
-    const textColor = targetColorMapping?.tailwindThemeName.textColor ?? fallbackTextColor;
+    const bgHoverColor = targetColorMapping?.themeMapping.backgroundHover;
+    const ringColor = targetColorMapping?.themeMapping.ringColor ?? "";
+    const textColor = targetColorMapping?.themeMapping.textColor ?? fallbackTextColor;
     const textColorHover =
-        targetColorMapping?.tailwindThemeName.textColorOnBackgroundHover ?? fallbackTextColorHover;
+        targetColorMapping?.themeMapping.textColorOnBackgroundHover ?? fallbackTextColorHover;
 
     return (
         <button
