@@ -35,8 +35,7 @@ export const ExpansionSelectionButton = ({ expansion }: Props) => {
     const ringColor = targetColorMapping?.themeMapping.ringColor ?? "";
     const textColor = targetColorMapping?.themeMapping.textColor ?? fallbackTextColor;
     const textColorHover =
-        targetColorMapping?.themeMapping.textColorOnBackgroundHover ??
-        fallbackTextColorHover;
+        targetColorMapping?.themeMapping.textColorOnBackgroundHover ?? fallbackTextColorHover;
 
     return (
         <button
