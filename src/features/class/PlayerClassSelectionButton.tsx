@@ -18,8 +18,8 @@ export const PlayerClassSelectionButton = ({
     const targetColorMapping = playerClassColorMappings.find(
         (mapping) => mapping.playerClass === playerClass
     );
-    const bgColorMapping = targetColorMapping?.themeMapping.background;
-    const bgHoverColorMapping = targetColorMapping?.themeMapping.backgroundHover;
+    const bgColorMapping = targetColorMapping?.themeMapping.background ?? "";
+    const bgHoverColorMapping = targetColorMapping?.themeMapping.backgroundHover ?? "";
     const ringColorMapping = targetColorMapping?.themeMapping.ringColor ?? "";
     const textColorMapping = targetColorMapping?.themeMapping.textColor ?? fallbackTextColor;
     const textColorHoverMapping =
