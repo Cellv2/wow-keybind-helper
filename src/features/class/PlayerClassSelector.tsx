@@ -15,7 +15,11 @@ export const PlayerClassSelector = () => {
     )[0].allowedClasses;
 
     const classElements = selectedExpansionAllowedClasses.map((playerClassName) => (
-        <PlayerClassSelectionButton key={playerClassName} class={playerClassName} />
+        <PlayerClassSelectionButton
+            key={playerClassName}
+            currentClassSelection={selectedPlayerClass}
+            playerClass={playerClassName}
+        />
     ));
 
     return (

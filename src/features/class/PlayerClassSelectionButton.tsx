@@ -6,26 +6,35 @@ import React from "react";
 import { setPlayerClass } from "./playerClassSelectorSlice";
 
 export type PlayerClassSelectionProps = {
-    class: PlayerClass;
+    currentClassSelection: PlayerClass;
+    playerClass: PlayerClass;
 };
-export const PlayerClassSelectionButton = (props: PlayerClassSelectionProps) => {
+export const PlayerClassSelectionButton = ({
+    currentClassSelection,
+    playerClass
+}: PlayerClassSelectionProps) => {
     const dispatch = useAppDispatch();
 
     const targetColorMapping = playerClassColorMappings.find(
-        (mapping) => mapping.playerClass === props.class
+        (mapping) => mapping.playerClass === playerClass
     );
-    const bgHoverColor = targetColorMapping?.themeMapping.backgroundHover;
-    const ringColor = targetColorMapping?.themeMapping.ringColor ?? "";
-    const textColor = targetColorMapping?.themeMapping.textColor ?? fallbackTextColor;
-    const textColorHover =
+    const bgColorMapping = targetColorMapping?.themeMapping.background;
+    const bgHoverColorMapping = targetColorMapping?.themeMapping.backgroundHover;
+    const ringColorMapping = targetColorMapping?.themeMapping.ringColor ?? "";
+    const textColorMapping = targetColorMapping?.themeMapping.textColor ?? fallbackTextColor;
+    const textColorHoverMapping =
         targetColorMapping?.themeMapping.textColorOnBackgroundHover ?? fallbackTextColorHover;
+
+    const isCurrentClassSelected = currentClassSelection === playerClass;
+    const bgColor = isCurrentClassSelected ? bgColorMapping : bgHoverColorMapping;
+    const textColor = isCurrentClassSelected ? textColorHoverMapping : textColorMapping;
 
     return (
         <button
-            className={`last:odd:col-span-2 ring-1 ring-inset ${ringColor} ${textColor} ${bgHoverColor} ${textColorHover}`}
-            onClick={() => dispatch(setPlayerClass(props.class))}
+            className={`last:odd:col-span-2 ring-1 ring-inset ${ringColorMapping} ${textColor} ${bgColor} ${textColorHoverMapping}`}
+            onClick={() => dispatch(setPlayerClass(playerClass))}
         >
-            {props.class}
+            {playerClass}
         </button>
     );
 };
