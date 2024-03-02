@@ -39,7 +39,7 @@ export const KeypressInputAndDisplay = () => {
             string = `${string} Alt + `;
         }
 
-        return string;
+        return string.trimStart();
     };
 
     const handleInputOnKeydown = (event: React.KeyboardEvent<HTMLInputElement>) => {
