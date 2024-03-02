@@ -1,14 +1,15 @@
 import { EXPANSION } from "@src/data/game/expansions";
 import { PlayerClassSelector } from "@src/features/class/PlayerClassSelector";
 import { ExpansionSelector } from "@src/features/expansion/ExpansionSelector";
+import { WotlkGadgetService } from "@src/services/gadgets/wotlk-gadget.service";
 import React from "react";
 import { AbilityIconMemoized } from "../Ability/AbilityIcon";
 import { AbilityBindingGrid } from "../AbilityBinding/AbilityBindingGrid";
+import { KeypressInputAndDisplay } from "../Input/KeypressInputAndDisplay";
 import { SelectionGrid } from "../Selections/SelectionGrid";
 import { SideBar } from "../shared/SideBar";
 import { TalentSelectorGrid } from "../talents/TalentSelectorGrid";
 import styles from "./HelloWorld.module.scss";
-import { WotlkGadgetService } from "@src/services/gadgets/wotlk-gadget.service";
 
 export type HelloWorldProps = {
     title: string;
@@ -49,6 +50,8 @@ const HelloWorld = ({ title }: HelloWorldProps) => {
                 <PlayerClassSelector />
 
                 <AbilityIconMemoized name="test" iconPath="path" />
+
+                <KeypressInputAndDisplay />
 
                 <AbilityBindingGrid
                     sectionName="Class Abilities"
