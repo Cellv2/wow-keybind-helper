@@ -12,9 +12,11 @@ export const expansionColorMappings: ExpansionColorMapping[] = [
         expansion: EXPANSION.CLASSIC,
         hexColor: "#F3E5AB",
         themeMapping: {
+            background: "bg-expansionClassic",
             backgroundHover: "hover:bg-expansionClassic",
             ringColor: "ring-expansionClassic",
             textColor: "text-expansionClassic",
+            textColorOnBackground: "text-slate-800",
             textColorOnBackgroundHover: "hover:text-slate-800"
         }
     },
@@ -22,6 +24,7 @@ export const expansionColorMappings: ExpansionColorMapping[] = [
         expansion: EXPANSION.DRAGONFLIGHT,
         hexColor: "#3A1200",
         themeMapping: {
+            background: "bg-expansionDragonflight",
             backgroundHover: "hover:bg-expansionDragonflight",
             ringColor: "ring-expansionDragonflight",
             textColor: "text-expansionDragonflight"
@@ -31,6 +34,7 @@ export const expansionColorMappings: ExpansionColorMapping[] = [
         expansion: EXPANSION.WOTLK,
         hexColor: "#3463AC",
         themeMapping: {
+            background: "bg-expansionWotlk",
             backgroundHover: "hover:bg-expansionWotlk",
             ringColor: "ring-expansionWotlk",
             textColor: "text-expansionWotlk"

@@ -8,7 +8,11 @@ export const ExpansionSelector = () => {
     const selectedExpansion = useAppSelector(selectExpansion);
 
     const availableExpansions = SupportedExpansions.map((expansion) => (
-        <ExpansionSelectionButtonMemoized key={expansion} expansion={expansion} />
+        <ExpansionSelectionButtonMemoized
+            key={expansion}
+            expansion={expansion}
+            currentExpansionSelection={selectedExpansion}
+        />
     ));
 
     return (

@@ -7,9 +7,9 @@ import React from "react";
 import { selectPlayerClass, setPlayerClass } from "../class/playerClassSelectorSlice";
 import { setExpansion } from "./expansionSelectorSlice";
 
-type Props = { expansion: Expansion };
+type Props = { expansion: Expansion; currentExpansionSelection: Expansion };
 
-export const ExpansionSelectionButton = ({ expansion }: Props) => {
+export const ExpansionSelectionButton = ({ expansion, currentExpansionSelection }: Props) => {
     const dispatch = useAppDispatch();
     const selectedPlayerClass = useAppSelector(selectPlayerClass);
 
@@ -30,16 +30,24 @@ export const ExpansionSelectionButton = ({ expansion }: Props) => {
     const targetColorMapping = expansionColorMappings.find(
         (mapping) => mapping.expansion === expansion
     );
+
     console.log(targetColorMapping);
-    const bgHoverColor = targetColorMapping?.themeMapping.backgroundHover;
-    const ringColor = targetColorMapping?.themeMapping.ringColor ?? "";
-    const textColor = targetColorMapping?.themeMapping.textColor ?? fallbackTextColor;
-    const textColorHover =
+    const bgColorMapping = targetColorMapping?.themeMapping.background ?? "";
+    const bgHoverColorMapping = targetColorMapping?.themeMapping.backgroundHover;
+    const ringColorMapping = targetColorMapping?.themeMapping.ringColor ?? "";
+    const textColorMapping = targetColorMapping?.themeMapping.textColor ?? fallbackTextColor;
+    const textColorOnBackgroundMapping =
+        targetColorMapping?.themeMapping.textColorOnBackground ?? fallbackTextColor;
+    const textColorHoverMapping =
         targetColorMapping?.themeMapping.textColorOnBackgroundHover ?? fallbackTextColorHover;
+
+    const isCurrentSelection = expansion === currentExpansionSelection;
+    const bgColor = isCurrentSelection ? bgColorMapping : bgHoverColorMapping;
+    const textColor = isCurrentSelection ? textColorOnBackgroundMapping : textColorMapping;
 
     return (
         <button
-            className={`ring-1 ring-inset ${ringColor} ${textColor} ${bgHoverColor} ${textColorHover}`}
+            className={`ring-1 ring-inset ${ringColorMapping} ${textColor} ${bgColor} ${textColorHoverMapping}`}
             onClick={() => handleSetExpansionOnClick(expansion)}
         >{`${expansion.charAt(0).toUpperCase()}${expansion.slice(1)}`}</button>
     );
