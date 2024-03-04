@@ -24,10 +24,12 @@ export const PlayerClassSelectionButton = ({
     const textColorMapping = targetColorMapping?.themeMapping.textColor ?? fallbackTextColor;
     const textColorHoverMapping =
         targetColorMapping?.themeMapping.textColorOnBackgroundHover ?? fallbackTextColorHover;
+    const textColorOnBackgroundMapping =
+        targetColorMapping?.themeMapping.textColorOnBackground ?? fallbackTextColor;
 
     const isCurrentClassSelected = currentClassSelection === playerClass;
     const bgColor = isCurrentClassSelected ? bgColorMapping : bgHoverColorMapping;
-    const textColor = isCurrentClassSelected ? textColorHoverMapping : textColorMapping;
+    const textColor = isCurrentClassSelected ? textColorOnBackgroundMapping : textColorMapping;
 
     return (
         <button
