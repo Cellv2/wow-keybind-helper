@@ -53,15 +53,7 @@ const HelloWorld = ({ title }: HelloWorldProps) => {
 
                 <KeypressInputAndDisplay />
 
-                <AbilityBindingGrid
-                    sectionName="Class Abilities"
-                    abilityNames={["Shiv", "Backstab"]}
-                />
-
-                <AbilityBindingGrid
-                    sectionName="Engineering Gadgets"
-                    abilityNames={wotlkGadgetNames}
-                />
+                <AbilityBindingGrid />
             </div>
         </main>
     );
