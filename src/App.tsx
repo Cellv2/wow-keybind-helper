@@ -4,6 +4,7 @@ import "./app.scss";
 import HelloWorld from "./components/HelloWorld/HelloWorld";
 import { MainLayout } from "./layouts/MainLayout";
 import { ErrorPage } from "./pages/ErrorPage";
+import { GamePage } from "./pages/GamePage";
 
 const router = createBrowserRouter([
     {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
                 index: true,
                 element: <HelloWorld title="Bonjour!" />
             },
+            { path: "/game", element: <GamePage /> },
             {
                 path: "/something",
                 element: <div>something</div>
