@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useState } from "react";
+import { AbilitySequenceGame } from "./AbilitySequenceGame";
+import { AbilityToBindGame } from "./AbilityToBindGame";
+import { BindToAbilityGame } from "./BindToAbilityGame";
 
 export const AbilityGames = () => {
-  return (
-    <div>AbilityGames</div>
-  )
-}
+    const [selectedGame, setSelectedGame] = useState<React.JSX.Element>(AbilitySequenceGame);
+    return (
+        <>
+            <button onClick={() => setSelectedGame(AbilitySequenceGame)}>
+                AbilitySequenceGame
+            </button>
+            <button onClick={() => setSelectedGame(AbilityToBindGame)}>AbilityToBindGame</button>
+            <button onClick={() => setSelectedGame(BindToAbilityGame)}>BindToAbilityGame</button>
+            <hr />
+            {selectedGame}
+        </>
+    );
+};
