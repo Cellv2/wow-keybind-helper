@@ -1,16 +1,11 @@
 // https://redux.js.org/usage/writing-tests#setting-up-a-reusable-test-render-function
 
-import React, { PropsWithChildren } from "react";
-import { render } from "@testing-library/react";
 import type { RenderOptions } from "@testing-library/react";
-import { configureStore } from "@reduxjs/toolkit";
+import { render } from "@testing-library/react";
+import React, { PropsWithChildren } from "react";
 import { Provider } from "react-redux";
 
 import { setupStore, type AppStore, type RootState } from "@src/app/store";
-// As a basic setup, import your same slice reducers
-// import userReducer from "../features/users/userSlice";
-import playerClassSelectorReducer from "@src/features/class/playerClassSelectorSlice";
-import expansionSelectorReducer from "@src/features/expansion/expansionSelectorSlice";
 
 // This type interface extends the default options for render from RTL, as well
 // as allows the user to specify other things such as initialState, store.
@@ -23,20 +18,11 @@ export function renderWithProviders(
     ui: React.ReactElement,
     {
         preloadedState = {},
-        // Automatically create a store instance if no store was passed in
-        // store = configureStore({
-        //     reducer: {
-        //         expansionSelector: expansionSelectorReducer,
-        //         playerClassSelector: playerClassSelectorReducer
-        //     },
-        //     // preloadedState
-        // }),
         store = setupStore(preloadedState),
-
         ...renderOptions
     }: ExtendedRenderOptions = {}
 ) {
-    function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
+    function Wrapper({ children }: PropsWithChildren<object>): JSX.Element {
         return <Provider store={store}>{children}</Provider>;
     }
 

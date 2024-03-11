@@ -9,13 +9,6 @@ const rootReducer = combineReducers({
     playerClassSelector: playerClassSelectorReducer
 });
 
-export const store = configureStore({
-    reducer: {
-        expansionSelector: expansionSelectorReducer,
-        playerClassSelector: playerClassSelectorReducer
-    }
-});
-
 export const setupStore = (preloadedState?: Partial<RootState>) => {
     return configureStore({
         reducer: rootReducer,
@@ -23,6 +16,6 @@ export const setupStore = (preloadedState?: Partial<RootState>) => {
     });
 };
 
-export type RootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof rootReducer>;
 export type AppStore = ReturnType<typeof setupStore>;
-export type AppDispatch = typeof store.dispatch;
+export type AppDispatch = AppStore["dispatch"];
