@@ -2,13 +2,17 @@
  * @jest-environment jsdom
  */
 
-import React from "react";
-import {render, screen} from "@testing-library/react";
-import HelloWorld from "./HelloWorld";
 import "@testing-library/jest-dom";
+import { screen } from "@testing-library/react";
+import React from "react";
+import { renderWithProviders } from "../../test-utils";
+import HelloWorld from "./HelloWorld";
+
+// https://redux.js.org/usage/writing-tests#writing-integration-tests-with-components
+// https://redux.js.org/usage/writing-tests#preparing-initial-test-state
 
 test("renders correct title", () => {
-    render(<HelloWorld title="Hello World" />);
+    renderWithProviders(<HelloWorld title="Hello World" />);
     const headerText = screen.getByText(/Hello World/i);
     expect(headerText).toBeInTheDocument();
 });
