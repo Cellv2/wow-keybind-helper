@@ -6,5 +6,8 @@ module.exports = {
     moduleNameMapper: {
         "\\.scss$": "identity-obj-proxy",
         "@src/(.*)": "<rootDir>/src/$1"
+    },
+    transform: {
+        "^.+\\.svg$": "jest-transformer-svg"
     }
 };
