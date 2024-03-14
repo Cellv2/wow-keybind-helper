@@ -49,5 +49,5 @@ export const ProfessionSelector = () => {
         />
     ));
 
-    return <div>{elements}</div>;
+    return <div className="grid grid-cols-2 gap-2">{elements}</div>;
 };

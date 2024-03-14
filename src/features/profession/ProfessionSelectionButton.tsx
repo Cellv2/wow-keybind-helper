@@ -9,10 +9,13 @@ type Props = {
 export const ProfessionSelectionButton = ({ professionName, selections, handleOnClick }: Props) => {
     return (
         <>
-            <button onClick={(e) => handleOnClick(e)} value={professionName}>
+            <button
+                className={`last:odd:col-span-2 ring-1 ring-inset`}
+                onClick={(e) => handleOnClick(e)}
+                value={professionName}
+            >
                 {professionName} - {selections.includes(professionName) ? "✅" : "❌"}
             </button>
-            <br />
         </>
     );
 };
