@@ -13,7 +13,7 @@ describe("App", () => {
         expect(viteReactElement).toBeInTheDocument();
 
         expect(
-            queryByTestId(document.documentElement, "does-not-exist")
+            queryByTestId(document.documentElement, "does-not-exist"),
         ).not.toBeInTheDocument();
 
         // screen.debug(); // prints out the jsx in the App component unto the command line
