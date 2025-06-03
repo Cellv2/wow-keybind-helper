@@ -3,8 +3,9 @@ import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 
-export default tseslint.config(
+const tsConfig = tseslint.config(
     { ignores: ["dist"] },
     {
         // extends: [js.configs.recommended, ...tseslint.configs.recommended],
@@ -34,3 +35,8 @@ export default tseslint.config(
         },
     }
 );
+
+export default [
+  ...tsConfig,
+  eslintConfigPrettier,
+]
