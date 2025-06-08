@@ -22,8 +22,12 @@ describe("BindTable", () => {
         // const headerValues = headers.map((header) => header.innerText);
 
         // TODO: read this + save it? https://dev.to/marktnoonan/why-i-rarely-use-getbyrole-testing-library-and-the-first-rule-of-aria-4581
-        const abilityHeader = screen.getByText("Ability", { selector: "th" });
-        const KeybindHeader = screen.getByText("Keybind", { selector: "th" });
+        const abilityHeader = screen.getByText("AbilityTestHeader", {
+            selector: "th",
+        });
+        const KeybindHeader = screen.getByText("KeybindTestHeader", {
+            selector: "th",
+        });
 
         expect(abilityHeader).toBeInTheDocument();
         expect(KeybindHeader).toBeInTheDocument();
@@ -33,10 +37,10 @@ describe("BindTable", () => {
     });
 
     it.todo.each([
-        "Blink",
-        "Cone of Cold",
-        "Arcane Explosion",
-        "Arcane Intellect",
+        "Ability 1",
+        "RandomAbility",
+        "This One Has Spaces",
+        "More Intelligence Please",
     ])("should have %s in the table cells", (ability) => {
         render(<KeybindTable />);
 
