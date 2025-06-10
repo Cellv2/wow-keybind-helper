@@ -7,6 +7,9 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
     plugins: [react(), svgr(), tailwindcss()],
     test: {
+        coverage: {
+            provider: "v8",
+        },
         environment: "jsdom",
         setupFiles: ["./src/vitest-setup.ts"],
     },
