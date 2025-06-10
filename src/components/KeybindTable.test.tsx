@@ -35,7 +35,17 @@ describe("BindTable", () => {
         }
     );
 
-    it.todo("should have the correct number of columns", () => {});
+    it("should have the correct number of columns", () => {
+        render(
+            <KeybindTable headers={["Header 1", "Header 2"]} abilities={[]} />
+        );
+
+        const header1 = screen.getByText("Header 1", { selector: "th" });
+        const header2 = screen.getByText("Header 2", { selector: "th" });
+
+        expect(header1).toBeInTheDocument();
+        expect(header2).toBeInTheDocument();
+    });
 
     it("should have header cells, one for ability and one for keybind", () => {
         render(
