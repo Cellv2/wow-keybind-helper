@@ -20,8 +20,6 @@ jobs:
       - run: npm run test:coverage
         env:
           GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
-      - run: npm run build
-      - run: sed -i '0,/index.js/s//dist\/index.js/' action.yml package.json
       - uses: ./
         with:
           gist-id: ${{ env.GIST_ID }}
