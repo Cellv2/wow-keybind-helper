@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vitest } from "vitest";
 import { ClassSelection } from "./ClassSelection";
 
 describe("ClassSelection", () => {
@@ -11,11 +11,20 @@ describe("ClassSelection", () => {
     });
 
     it("should call a function to set active class on click", () => {
-        render(<ClassSelection className="My Class" />);
+        const handleClick = vitest.fn();
+
+        render(
+            <ClassSelection
+                handleSetActiveClass={handleClick}
+                className="My Class"
+            />
+        );
 
         // TODO: finish this
         // https://testing-library.com/docs/dom-testing-library/api-events
         const match = screen.getByTitle("My Class");
         fireEvent.click(match);
+
+        expect(handleClick).toHaveBeenCalledOnce();
     });
 });
