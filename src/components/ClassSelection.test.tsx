@@ -4,7 +4,12 @@ import { ClassSelection } from "./ClassSelection";
 
 describe("ClassSelection", () => {
     it("should display the correct class", () => {
-        render(<ClassSelection className="OP Class" />);
+        render(
+            <ClassSelection
+                handleSetActiveClass={() => {}}
+                className="OP Class"
+            />
+        );
 
         const match = screen.getByTitle("OP Class");
         expect(match).toBeInTheDocument();
@@ -20,8 +25,6 @@ describe("ClassSelection", () => {
             />
         );
 
-        // TODO: finish this
-        // https://testing-library.com/docs/dom-testing-library/api-events
         const match = screen.getByTitle("My Class");
         fireEvent.click(match);
 

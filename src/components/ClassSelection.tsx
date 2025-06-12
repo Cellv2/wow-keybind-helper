@@ -1,5 +1,14 @@
-type Props = {};
+type Props = {
+    className: string;
+    handleSetActiveClass: () => void;
+};
 
 export const ClassSelection = (props: Props) => {
-    return <div>ClassSelection</div>;
+    const { className, handleSetActiveClass } = props;
+
+    return (
+        <button onClick={handleSetActiveClass} title={className}>
+            {className}
+        </button>
+    );
 };
