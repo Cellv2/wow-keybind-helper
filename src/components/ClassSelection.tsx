@@ -7,7 +7,11 @@ export const ClassSelection = (props: Props) => {
     const { className, handleSetActiveClass } = props;
 
     return (
-        <button onClick={handleSetActiveClass} title={className}>
+        <button
+            className="size-16 bg-sky-500/50"
+            onClick={handleSetActiveClass}
+            title={className}
+        >
             {className}
         </button>
     );
