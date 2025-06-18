@@ -1,11 +1,11 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vitest } from "vitest";
-import { ClassSelection } from "./ClassSelection";
+import { ClassSelectionButton } from "./ClassSelectionButton";
 
-describe("ClassSelection", () => {
+describe("ClassSelectionButton", () => {
     it("should display the correct class", () => {
         render(
-            <ClassSelection
+            <ClassSelectionButton
                 handleSetActiveClass={() => {}}
                 className="OP Class"
             />
@@ -19,7 +19,7 @@ describe("ClassSelection", () => {
         const handleClick = vitest.fn();
 
         render(
-            <ClassSelection
+            <ClassSelectionButton
                 handleSetActiveClass={handleClick}
                 className="My Class"
             />

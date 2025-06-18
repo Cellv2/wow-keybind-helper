@@ -3,7 +3,7 @@ type Props = {
     handleSetActiveClass: () => void;
 };
 
-export const ClassSelection = (props: Props) => {
+export const ClassSelectionButton = (props: Props) => {
     const { className, handleSetActiveClass } = props;
 
     return (
