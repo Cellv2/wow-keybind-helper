@@ -6,7 +6,8 @@ describe("ClassSelectionContainer", () => {
     it("should contain the correct selection buttons", () => {
         const classNames = ["Class 1", "Class 2"];
 
-        render(<ClassSelectionContainer classNames={classNames} />);
+        render(<ClassSelectionContainer availableClasses={classNames} />);
+        screen.debug();
 
         for (const className of classNames) {
             const match = screen.getByTitle(className);
