@@ -30,4 +30,34 @@ describe("ClassSelectionButton", () => {
 
         expect(handleClick).toHaveBeenCalledOnce();
     });
+
+    it("should have the correct active state when isActive is true", () => {
+        const isActive = true;
+
+        render(
+            <ClassSelectionButton
+                handleSetActiveClass={() => {}}
+                className="My Class"
+                isActive={isActive}
+            />
+        );
+
+        const match = screen.getByTitle("My Class");
+        expect(match.classList).toContain("active");
+    });
+
+    it("should have the correct active state when isActive is false", () => {
+        const isActive = false;
+
+        render(
+            <ClassSelectionButton
+                handleSetActiveClass={() => {}}
+                className="My Class"
+                isActive={isActive}
+            />
+        );
+
+        const match = screen.getByTitle("My Class");
+        expect(match.classList).not.toContain("active");
+    });
 });
