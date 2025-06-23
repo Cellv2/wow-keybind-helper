@@ -16,7 +16,7 @@ const meta = {
     },
     args: {
         className: "Test Class",
-        handleSetActiveClass: () => {},
+        handleSetActiveClass: fn(),
     },
 } satisfies Meta<typeof ClassSelectionButton>;
 
