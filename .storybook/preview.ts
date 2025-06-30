@@ -1,5 +1,8 @@
 import type { Preview } from "@storybook/react-vite";
+import "../src/style.css";
 
+// if looking for theme switching:
+//  https://storybook.js.org/recipes/tailwindcss
 const preview: Preview = {
     parameters: {
         controls: {
