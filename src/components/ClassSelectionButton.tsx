@@ -1,3 +1,5 @@
+import dkImg from "../assets/icons/player/classicon_deathknight.jpg";
+
 type Props = {
     className: string;
     handleSetActiveClass: () => void;
@@ -19,7 +21,7 @@ export const ClassSelectionButton = (props: Props) => {
             onClick={handleSetActiveClass}
             title={className}
         >
-            {className}
+            <img src={dkImg} />
         </button>
     );
 };
