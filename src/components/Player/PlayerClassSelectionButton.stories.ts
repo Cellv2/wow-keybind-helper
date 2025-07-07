@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
-import { ClassSelectionButton } from "./ClassSelectionButton";
+import { PlayerClassSelectionButton } from "./PlayerClassSelectionButton";
 
 const meta = {
-    title: "ClassSelectionButton",
-    component: ClassSelectionButton,
+    title: "PlayerClassSelectionButton",
+    component: PlayerClassSelectionButton,
     parameters: {
         layout: "centered",
     },
@@ -18,7 +18,7 @@ const meta = {
         className: "Test Class",
         handleSetActiveClass: fn(),
     },
-} satisfies Meta<typeof ClassSelectionButton>;
+} satisfies Meta<typeof PlayerClassSelectionButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

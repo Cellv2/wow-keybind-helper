@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { ClassSelectionContainer } from "./ClassSelectionContainer";
+import { PlayerClassSelectionContainer } from "./PlayerClassSelectionContainer";
 
-describe("ClassSelectionContainer", () => {
+describe("PlayerClassSelectionContainer", () => {
     it("should contain the correct selection buttons", () => {
         const classNames = ["Class 1", "Class 2"];
 
-        render(<ClassSelectionContainer availableClasses={classNames} />);
+        render(<PlayerClassSelectionContainer availableClasses={classNames} />);
         screen.debug();
 
         for (const className of classNames) {

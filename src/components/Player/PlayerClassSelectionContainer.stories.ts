@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { ClassSelectionContainer } from "./ClassSelectionContainer";
+import { PlayerClassSelectionContainer } from "./PlayerClassSelectionContainer";
 
 const meta = {
-    title: "ClassSelectionContainer",
-    component: ClassSelectionContainer,
+    title: "PlayerClassSelectionContainer",
+    component: PlayerClassSelectionContainer,
     parameters: {
         layout: "centered",
     },
@@ -11,7 +11,7 @@ const meta = {
     args: {
         availableClasses: [],
     },
-} satisfies Meta<typeof ClassSelectionContainer>;
+} satisfies Meta<typeof PlayerClassSelectionContainer>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

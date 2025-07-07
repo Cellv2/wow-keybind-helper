@@ -1,12 +1,12 @@
-import { ClassSelectionButton } from "./ClassSelectionButton";
+import { PlayerClassSelectionButton } from "./PlayerClassSelectionButton";
 
 type Props = {
     availableClasses: string[];
 };
 
-export const ClassSelectionContainer = (props: Props) => {
+export const PlayerClassSelectionContainer = (props: Props) => {
     const classComponents = props.availableClasses.map((availableClass) => (
-        <ClassSelectionButton
+        <PlayerClassSelectionButton
             className={availableClass}
             handleSetActiveClass={() => {}}
         />
