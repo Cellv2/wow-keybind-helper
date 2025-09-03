@@ -19,26 +19,30 @@ describe("player-class service", () => {
     });
 
     describe("getPlayerClassesForExpansion", () => {
-        it.skip("should return the classes available for the provided expansion", () => {
+        it("should return the classes available for the provided expansion", () => {
+            const playerClassOne = {
+                name: "ClassA",
+                displayName: "Class A",
+                availableExpansions: ["1", "2"],
+            };
+
+            const playerClassTwo = {
+                name: "ClassB",
+                displayName: "Class B",
+                availableExpansions: ["2"],
+            };
+
             vi.spyOn(
                 playerClassDataModule,
                 "playerClassData",
                 "get"
-            ).mockResolvedValue([
-                {
-                    name: "ClassA",
-                    displayName: "Class A",
-                    availableExpansions: ["1", "2"],
-                },
-                {
-                    name: "ClassB",
-                    displayName: "Class B",
-                    availableExpansions: ["2"],
-                },
-            ]);
+            ).mockResolvedValue([playerClassOne, playerClassTwo]);
 
-            const expansionClasses = sut.getPlayerClassesForExpansion();
-            expect(expansionClasses);
+            const expansionClasses = sut.getPlayerClassesForExpansion("1");
+            expect(expansionClasses).toBe(playerClassOne);
+
+            const expansionClassesTwo = sut.getPlayerClassesForExpansion("2");
+            expect(expansionClassesTwo).toBe([playerClassOne, playerClassTwo]);
         });
     });
 
